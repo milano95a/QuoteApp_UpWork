@@ -58,16 +58,24 @@
 		70123D4525D457F200BFBB5E /* QuoteApp_UpWork */ = {
 			isa = PBXGroup;
 			children = (
-				70123D4625D457F200BFBB5E /* AppDelegate.swift */,
-				70123D4825D457F200BFBB5E /* SceneDelegate.swift */,
 				70123D4A25D457F200BFBB5E /* ViewController.swift */,
 				70123D4C25D457F200BFBB5E /* Main.storyboard */,
-				70123D5225D457F900BFBB5E /* Assets.xcassets */,
-				70123D5425D457F900BFBB5E /* LaunchScreen.storyboard */,
+				70123D5E25D4580E00BFBB5E /* Supporting Files */,
 				70123D5725D457F900BFBB5E /* Info.plist */,
 				70123D4F25D457F200BFBB5E /* QuoteApp_UpWork.xcdatamodeld */,
 			);
 			path = QuoteApp_UpWork;
+			sourceTree = "<group>";
+		};
+		70123D5E25D4580E00BFBB5E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				70123D4625D457F200BFBB5E /* AppDelegate.swift */,
+				70123D4825D457F200BFBB5E /* SceneDelegate.swift */,
+				70123D5225D457F900BFBB5E /* Assets.xcassets */,
+				70123D5425D457F900BFBB5E /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
