@@ -8,13 +8,24 @@
 import UIKit
 
 private let reuseIdentifier = "MyCell"
+private let STATUS_BAR_HEIGHT = 20
 
 class HomeViewController: UIViewController,
-                                UICollectionViewDelegate,
-                                UICollectionViewDataSource,
-                                UICollectionViewDelegateFlowLayout{
-
+                          UICollectionViewDelegate,
+                          UICollectionViewDataSource,
+                          UICollectionViewDelegateFlowLayout{
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var layout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        
+        let width = UIScreen.main.bounds.size.width
+        let height = UIScreen.main.bounds.size.height - CGFloat(STATUS_BAR_HEIGHT / 2)
+        layout.estimatedItemSize = CGSize(width: width, height: height)
+        return layout
+    }()
+    
     
     let array = [
         "I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.",
@@ -32,31 +43,28 @@ class HomeViewController: UIViewController,
         "Don’t walk in front of me… I may not follow Don’t walk behind me… I may not lead Walk beside me… just be my friend",
         "No one can make you feel inferior without your consent.",
     ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.collectionViewLayout = layout
     }
-
+    
     // MARK: UICollectionViewDataSource
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return array.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? QuoteCollectionViewCell {
-            
-            cell.backgroundColor = UIColor.random()
-            cell.quoteLabel.text = array[indexPath.item]
-            
-            return cell
-        }
-    
-        return UICollectionViewCell()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return view.frame.size
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! QuoteCollectionViewCell
+        
+        cell.quoteLabel.frame.size.width = UIScreen.main.bounds.size.width - CGFloat(STATUS_BAR_HEIGHT)
+        cell.quoteLabel.frame.size.height = UIScreen.main.bounds.size.height
+        cell.quoteLabel.backgroundColor = .clear
+        cell.quoteLabel.text = array[indexPath.item]
+        
+        return cell
     }
 }
