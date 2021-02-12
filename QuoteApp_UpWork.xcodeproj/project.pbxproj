@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,11 @@
 		70123D5625D457F900BFBB5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70123D5425D457F900BFBB5E /* LaunchScreen.storyboard */; };
 		7029FB8625D48EEC0072A06B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7029FB8525D48EEC0072A06B /* HomeViewController.swift */; };
 		7059239425D49D1C00BC29F8 /* QuoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7059239325D49D1C00BC29F8 /* QuoteCollectionViewCell.swift */; };
+		70716A4425D624D0000264C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70716A4325D624D0000264C1 /* GoogleService-Info.plist */; };
+		708ECD5225D630810041992B /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708ECD5125D630810041992B /* AddViewController.swift */; };
+		708ECD5525D6326B0041992B /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708ECD5425D6326B0041992B /* Quote.swift */; };
 		70BC46C925D49A9C008F3C04 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BC46C825D49A9C008F3C04 /* Extensions.swift */; };
+		F205020FCB07C8137A05EBBC /* Pods_QuoteApp_UpWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF376AF0E51A501AB3002E70 /* Pods_QuoteApp_UpWork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +33,13 @@
 		70123D5725D457F900BFBB5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7029FB8525D48EEC0072A06B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7059239325D49D1C00BC29F8 /* QuoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCollectionViewCell.swift; sourceTree = "<group>"; };
+		70716A4325D624D0000264C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		708ECD5125D630810041992B /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		708ECD5425D6326B0041992B /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		70BC46C825D49A9C008F3C04 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B960CE70F45E79A114F92525 /* Pods-QuoteApp_UpWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuoteApp_UpWork.release.xcconfig"; path = "Target Support Files/Pods-QuoteApp_UpWork/Pods-QuoteApp_UpWork.release.xcconfig"; sourceTree = "<group>"; };
+		BD9DFCF9E888252274026D4B /* Pods-QuoteApp_UpWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuoteApp_UpWork.debug.xcconfig"; path = "Target Support Files/Pods-QuoteApp_UpWork/Pods-QuoteApp_UpWork.debug.xcconfig"; sourceTree = "<group>"; };
+		EF376AF0E51A501AB3002E70 /* Pods_QuoteApp_UpWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuoteApp_UpWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +47,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F205020FCB07C8137A05EBBC /* Pods_QuoteApp_UpWork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		622352798F94C37A3D4260E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF376AF0E51A501AB3002E70 /* Pods_QuoteApp_UpWork.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		70123D3A25D457F200BFBB5E = {
 			isa = PBXGroup;
 			children = (
 				70123D4525D457F200BFBB5E /* QuoteApp_UpWork */,
 				70123D4425D457F200BFBB5E /* Products */,
+				D13173916BD5C23F1619F0DD /* Pods */,
+				622352798F94C37A3D4260E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,12 +84,16 @@
 			isa = PBXGroup;
 			children = (
 				70123D4C25D457F200BFBB5E /* Main.storyboard */,
+				708ECD5125D630810041992B /* AddViewController.swift */,
+				708ECD5425D6326B0041992B /* Quote.swift */,
 				7059239325D49D1C00BC29F8 /* QuoteCollectionViewCell.swift */,
 				70BC46C825D49A9C008F3C04 /* Extensions.swift */,
 				7029FB8525D48EEC0072A06B /* HomeViewController.swift */,
 				70123D5E25D4580E00BFBB5E /* Supporting Files */,
+				70123D4625D457F200BFBB5E /* AppDelegate.swift */,
 				70123D5725D457F900BFBB5E /* Info.plist */,
 				70123D4F25D457F200BFBB5E /* QuoteApp_UpWork.xcdatamodeld */,
+				70716A4325D624D0000264C1 /* GoogleService-Info.plist */,
 			);
 			path = QuoteApp_UpWork;
 			sourceTree = "<group>";
@@ -76,12 +101,20 @@
 		70123D5E25D4580E00BFBB5E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				70123D4625D457F200BFBB5E /* AppDelegate.swift */,
 				70123D4825D457F200BFBB5E /* SceneDelegate.swift */,
 				70123D5225D457F900BFBB5E /* Assets.xcassets */,
 				70123D5425D457F900BFBB5E /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D13173916BD5C23F1619F0DD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD9DFCF9E888252274026D4B /* Pods-QuoteApp_UpWork.debug.xcconfig */,
+				B960CE70F45E79A114F92525 /* Pods-QuoteApp_UpWork.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,9 +124,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70123D5A25D457F900BFBB5E /* Build configuration list for PBXNativeTarget "QuoteApp_UpWork" */;
 			buildPhases = (
+				9E7104491E5211C8F9AD96C2 /* [CP] Check Pods Manifest.lock */,
 				70123D3F25D457F200BFBB5E /* Sources */,
 				70123D4025D457F200BFBB5E /* Frameworks */,
 				70123D4125D457F200BFBB5E /* Resources */,
+				F26EE04C46A312766D13FCC2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -142,12 +177,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				70123D5625D457F900BFBB5E /* LaunchScreen.storyboard in Resources */,
+				70716A4425D624D0000264C1 /* GoogleService-Info.plist in Resources */,
 				70123D5325D457F900BFBB5E /* Assets.xcassets in Resources */,
 				70123D4E25D457F200BFBB5E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9E7104491E5211C8F9AD96C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuoteApp_UpWork-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F26EE04C46A312766D13FCC2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuoteApp_UpWork/Pods-QuoteApp_UpWork-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuoteApp_UpWork/Pods-QuoteApp_UpWork-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuoteApp_UpWork/Pods-QuoteApp_UpWork-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		70123D3F25D457F200BFBB5E /* Sources */ = {
@@ -156,7 +234,9 @@
 			files = (
 				70BC46C925D49A9C008F3C04 /* Extensions.swift in Sources */,
 				7059239425D49D1C00BC29F8 /* QuoteCollectionViewCell.swift in Sources */,
+				708ECD5225D630810041992B /* AddViewController.swift in Sources */,
 				70123D4725D457F200BFBB5E /* AppDelegate.swift in Sources */,
+				708ECD5525D6326B0041992B /* Quote.swift in Sources */,
 				70123D5125D457F200BFBB5E /* QuoteApp_UpWork.xcdatamodeld in Sources */,
 				70123D4925D457F200BFBB5E /* SceneDelegate.swift in Sources */,
 				7029FB8625D48EEC0072A06B /* HomeViewController.swift in Sources */,
@@ -303,6 +383,7 @@
 		};
 		70123D5B25D457F900BFBB5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD9DFCF9E888252274026D4B /* Pods-QuoteApp_UpWork.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -322,6 +403,7 @@
 		};
 		70123D5C25D457F900BFBB5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B960CE70F45E79A114F92525 /* Pods-QuoteApp_UpWork.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
