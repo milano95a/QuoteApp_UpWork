@@ -11,6 +11,8 @@ import FirebaseDatabase
 class AddViewController: UIViewController, UITextViewDelegate {
 
     private let db = Database.database().reference()
+    var delegate: ViewControllerHandler!
+    
     @IBOutlet weak var quoteTextView: UITextView!
     
     override func viewDidLoad() {
@@ -40,7 +42,9 @@ class AddViewController: UIViewController, UITextViewDelegate {
                 print("successfully saved")
             }
         }
-        dismiss(animated: true)
+        dismiss(animated: true) { [weak self] in
+            self?.delegate?.dismissed()
+        }
     }
     
     @IBAction func onCancel(_ sender: UIButton) {

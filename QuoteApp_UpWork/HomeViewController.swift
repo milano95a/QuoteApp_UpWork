@@ -11,11 +11,16 @@ import FirebaseDatabase
 private let reuseIdentifier = "MyCell"
 private let STATUS_BAR_HEIGHT = 20
 
+protocol ViewControllerHandler {
+    func dismissed()
+}
+
 class HomeViewController: UIViewController,
                           UICollectionViewDelegate,
                           UICollectionViewDataSource,
-                          UICollectionViewDelegateFlowLayout{
-    
+                          UICollectionViewDelegateFlowLayout,
+                          ViewControllerHandler
+{
     let db = Database.database().reference()
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -52,6 +57,36 @@ class HomeViewController: UIViewController,
         
         collectionView.collectionViewLayout = layout
         
+        syncTableView()
+    }
+    
+    // MARK: ViewControllerHandler
+    
+    func dismissed() {
+        syncTableView()
+    }
+    
+    // MARK: UICollectionViewDataSource
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return array.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! QuoteCollectionViewCell
+        
+        cell.quoteLabel.frame.size.width = UIScreen.main.bounds.size.width - CGFloat(STATUS_BAR_HEIGHT)
+        cell.quoteLabel.frame.size.height = UIScreen.main.bounds.size.height
+        cell.quoteLabel.backgroundColor = .clear
+        cell.quoteLabel.text = array[indexPath.item]
+        
+        return cell
+    }
+    
+    // MARK: Private
+    
+    private func syncTableView(){
         var newArray = [String]()
         
         db.child("quotes").observeSingleEvent(of: .value) { [weak self] snapshot in
@@ -72,27 +107,9 @@ class HomeViewController: UIViewController,
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        print("viewWillAppear")
-    }
-    
-    // MARK: UICollectionViewDataSource
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return array.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! QuoteCollectionViewCell
-        
-        cell.quoteLabel.frame.size.width = UIScreen.main.bounds.size.width - CGFloat(STATUS_BAR_HEIGHT)
-        cell.quoteLabel.frame.size.height = UIScreen.main.bounds.size.height
-        cell.quoteLabel.backgroundColor = .clear
-        cell.quoteLabel.text = array[indexPath.item]
-        
-        return cell
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? AddViewController {
+            vc.delegate = self
+        }
     }
 }
