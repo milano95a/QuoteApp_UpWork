@@ -17,6 +17,7 @@ class AddViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         
         quoteTextView.delegate = self
+        quoteTextView.becomeFirstResponder()
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
