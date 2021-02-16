@@ -91,8 +91,10 @@ class HomeViewController: UIViewController,
                 guard let quoteText = quote as? [String: String] else {
                     return
                 }
-                newArray.append(quoteText.values.first!)
+                newArray.insert(quoteText.values.first!, at: 0)
             }
+            
+            newArray.sort()
             
             DispatchQueue.main.async {
                 self?.array = newArray

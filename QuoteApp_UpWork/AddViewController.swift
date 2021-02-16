@@ -32,7 +32,7 @@ class AddViewController: UIViewController, UITextViewDelegate {
             return
         }
         
-        let id = UUID().uuidString
+        let id = String(Int64(Date().timeIntervalSince1970))
         let quoteObject: [String: Any] = ["quote": newQuote]
         
         db.child("quotes").child(id).setValue(quoteObject) { error, ref in

@@ -90,7 +90,6 @@
 				70BC46C825D49A9C008F3C04 /* Extensions.swift */,
 				7029FB8525D48EEC0072A06B /* HomeViewController.swift */,
 				70123D5E25D4580E00BFBB5E /* Supporting Files */,
-				70123D4625D457F200BFBB5E /* AppDelegate.swift */,
 				70123D5725D457F900BFBB5E /* Info.plist */,
 				70123D4F25D457F200BFBB5E /* QuoteApp_UpWork.xcdatamodeld */,
 				70716A4325D624D0000264C1 /* GoogleService-Info.plist */,
@@ -101,6 +100,7 @@
 		70123D5E25D4580E00BFBB5E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				70123D4625D457F200BFBB5E /* AppDelegate.swift */,
 				70123D4825D457F200BFBB5E /* SceneDelegate.swift */,
 				70123D5225D457F900BFBB5E /* Assets.xcassets */,
 				70123D5425D457F900BFBB5E /* LaunchScreen.storyboard */,
